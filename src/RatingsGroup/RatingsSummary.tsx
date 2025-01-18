@@ -1,9 +1,10 @@
-import Table, { Column } from "../components/Table";
-import Card from "../components/Card";
-import CellContent from "../components/CellContent";
 import { useQuery } from "@tanstack/react-query";
+
+import Table, { Column } from "../components/Table/Table";
+import CellContent from "../components/CellContent/CellContent";
 import { RatingsSummaryResponse } from "../types";
 import { fetchData } from "../hooks/common";
+import Card from "../components/Card/Card";
 
 interface RatingsSummaryRowData {
   entity: string;

@@ -1,6 +1,5 @@
-import React from "react";
+import Loader from "../Loader/Loader";
 import "./Card.scss";
-import Loader from "./Loader/Loader";
 
 type CardProps = {
   title?: string;

@@ -1,18 +1,14 @@
-// fetch user
-// -> lazy load 'premium' cards
-// display cards
-
 import { lazy, Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchData } from "../hooks/common";
 import { UserResponse } from "../types";
 import Loader from "../components/Loader/Loader";
-import SectorIndustryRanking from "../SectorIndustryRanking/SectorIndustryRanking";
+import SectorIndustryRanking from "./SectorIndustryRanking";
 import "./RatingsGroup.scss";
 
-const RatingsSummary = lazy(() => import("../RatingsSummary/RatingsSummary"));
-const FactorGrades = lazy(() => import("../FactorGrades/FactorGrades"));
+const RatingsSummary = lazy(() => import("./RatingsSummary"));
+const FactorGrades = lazy(() => import("./FactorGrades/FactorGrades"));
 
 const RatingsGroup: React.FC = () => {
   const { data, isPending, isError } = useQuery<UserResponse>({

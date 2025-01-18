@@ -3,7 +3,7 @@ import {
   FactorGradesNowResponse,
   FormattedResponse,
   FactorGradesKey,
-} from "../types";
+} from "../../types";
 
 export interface FactorGradesRowData {
   rowName: string;

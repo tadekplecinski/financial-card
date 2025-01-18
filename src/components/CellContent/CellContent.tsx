@@ -1,5 +1,5 @@
-import React from "react";
 import classNames from "classnames";
+
 import "./CellContent.scss";
 
 // todo: add @ paths!!!!!

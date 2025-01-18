@@ -1,4 +1,4 @@
-import CellContent from "./CellContent";
+import CellContent from "../CellContent/CellContent";
 import "./KeyValueDisplay.scss";
 
 export type KeyValueDisplayProps = {
