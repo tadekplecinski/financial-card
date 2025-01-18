@@ -23,4 +23,24 @@ export type RatingsSummaryResponse = Record<
   { rating: string; score: number }
 >;
 
+interface Ranking {
+  rank: number;
+  total: number;
+}
+
+export interface SectorIndustryRankingResponse {
+  sector: string;
+  industry: string;
+  rankings: {
+    overall: Ranking;
+    sector: Ranking;
+    industry_specific: Ranking;
+  };
+}
+
+export interface UserResponse {
+  premium: boolean;
+}
+
+// update name like ResponseFormattedForTable or sth?
 export type FormattedResponse = FactorGrades3mResponse;

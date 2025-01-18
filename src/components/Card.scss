@@ -1,6 +1,11 @@
 .card {
   background-color: #fff;
-  padding: 2rem;
-  width: 100%;
-  min-width: 300px;
+  padding: 1rem;
+
+  &__title {
+    font-size: 1.6rem;
+    color: grey;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
 }

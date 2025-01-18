@@ -15,10 +15,10 @@ const FactorGrades: React.FC = () => {
     useFactorGradesData();
 
   if (isPending || !nowData || !threeMonthsData || !sixMonthsData)
-    return <Card isLoading />;
+    return <Card isLoading title="Factor Grades" />;
 
   if (isError) {
-    return <Card isError />;
+    return <Card isError title="Factor Grades" />;
   }
 
   const nowResponseFormatted = formatNowResponse(nowData);
@@ -59,8 +59,8 @@ const FactorGrades: React.FC = () => {
   ];
 
   return (
-    <Card>
-      <Table columns={columns} data={data} title="Factor Grades" />
+    <Card title="Factor Grades">
+      <Table columns={columns} data={data} />
     </Card>
   );
 };

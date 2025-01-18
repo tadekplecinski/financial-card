@@ -3,6 +3,7 @@ import Card from "../components/Card";
 import CellContent from "../components/CellContent";
 import { useQuery } from "@tanstack/react-query";
 import { RatingsSummaryResponse } from "../types";
+import { fetchData } from "../hooks/common";
 
 interface RatingsSummaryRowData {
   entity: string;
@@ -18,30 +19,19 @@ const formatRatingsSummaryResponse = (
   }, []);
 };
 
-async function fetchData<T>(): Promise<T> {
-  const response = await fetch(
-    "https://seekingalpha.free.beeceptor.com/ratings-summary"
-  );
-  if (!response.ok) {
-    throw new Error(
-      `Network response was not ok: ${response.status} ${response.statusText}`
-    );
-  }
-
-  const data: T = await response.json();
-  return data;
-}
-
 const RatingsSummary: React.FC = () => {
   const { data, isPending, isError } = useQuery<RatingsSummaryResponse>({
     queryKey: ["ratingsSummary"],
-    queryFn: () => fetchData<RatingsSummaryResponse>(),
+    queryFn: () =>
+      fetchData<RatingsSummaryResponse>(
+        "https://seekingalpha.free.beeceptor.com/ratings-summary"
+      ),
   });
 
-  if (isPending) return <Card isLoading />;
+  if (isPending) return <Card isLoading title="Ratings Summary" />;
 
   if (isError) {
-    return <Card isError />;
+    return <Card isError title="Ratings Summary" />;
   }
 
   const formattedData: RatingsSummaryRowData[] =
@@ -65,8 +55,8 @@ const RatingsSummary: React.FC = () => {
   ];
 
   return (
-    <Card>
-      <Table columns={columns} data={formattedData} title="Ratings Summary" />
+    <Card title="Ratings Summary">
+      <Table columns={columns} data={formattedData} />
     </Card>
   );
 };

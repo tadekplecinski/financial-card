@@ -3,13 +3,34 @@
   line-height: 1.5;
   font-weight: 400;
   color: #333;
-
-  /* color-scheme: light dark; */
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #242424; */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+/* some silly styles to be able to see the component in the right rail
+  (in its natural environment) */
+
+.page {
+  display: grid;
+  grid-template-columns: 4fr minmax(400px, 1fr);
 }

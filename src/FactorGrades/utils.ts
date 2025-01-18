@@ -33,9 +33,10 @@ export const format6mResponse = (
   keys: FactorGradesKey[]
 ): FormattedResponse => {
   const factorGrades6mResponseMap = Object.fromEntries(data);
-  return keys.reduce((acc, key) => {
-    return { ...acc, [key]: factorGrades6mResponseMap[key] };
-  }, {} as FormattedResponse);
+  return keys.reduce(
+    (acc, key) => ({ ...acc, [key]: factorGrades6mResponseMap[key] }),
+    {} as FormattedResponse
+  );
 };
 
 export const mapKeysToRowsData = (

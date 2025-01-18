@@ -1,19 +1,16 @@
 .table {
+  border-collapse: collapse;
+  width: 100%;
+
+  // tr {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+
   td,
   th {
     font-weight: normal;
     padding: 0.3rem;
-  }
-
-  table {
-    border-collapse: collapse;
-  }
-
-  .title {
-    font-size: 1.6rem;
-    color: grey;
-    margin: 1rem;
-    margin-left: 0;
   }
 
   .header {
