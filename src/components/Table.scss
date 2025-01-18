@@ -2,17 +2,18 @@
   td,
   th {
     font-weight: normal;
+    padding: 0.3rem;
   }
 
   table {
-    border-collapse: separate;
-    border-spacing: 12px;
+    border-collapse: collapse;
   }
 
   .title {
     font-size: 1.6rem;
     color: grey;
     margin: 1rem;
+    margin-left: 0;
   }
 
   .header {

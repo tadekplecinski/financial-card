@@ -1,8 +1,8 @@
-import { Key } from "../types";
+import { FactorGradesKey } from "../types";
 import Table, { Column } from "../components/Table";
 import Card from "../components/Card";
 import CellContent from "../components/CellContent";
-import { useFactorGradesData } from "../useFactorGradesData";
+import { useFactorGradesData } from "../hooks/useFactorGradesData";
 import {
   FactorGradesRowData,
   format6mResponse,
@@ -10,7 +10,7 @@ import {
   mapKeysToRowsData,
 } from "./utils";
 
-const FactorGradesGrid: React.FC = () => {
+const FactorGrades: React.FC = () => {
   const { nowData, threeMonthsData, sixMonthsData, isPending, isError } =
     useFactorGradesData();
 
@@ -25,7 +25,7 @@ const FactorGradesGrid: React.FC = () => {
 
   // assume that keys for the now (and for 3m data) response are in correct order
   // also assume that JS preserves the order keys in objects...
-  const keys = Object.keys(nowResponseFormatted) as Key[];
+  const keys = Object.keys(nowResponseFormatted) as FactorGradesKey[];
 
   // pass the keys in correct order to properly structure the 6m response
   const sixMonthsResponseFormatted = format6mResponse(sixMonthsData, keys);
@@ -38,7 +38,6 @@ const FactorGradesGrid: React.FC = () => {
 
   const columns: Column<FactorGradesRowData>[] = [
     {
-      header: "",
       render: (row) => <CellContent type="info">{row.rowName}</CellContent>,
       id: "nowName",
     },
@@ -66,4 +65,4 @@ const FactorGradesGrid: React.FC = () => {
   );
 };
 
-export default FactorGradesGrid;
+export default FactorGrades;

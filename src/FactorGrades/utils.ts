@@ -1,10 +1,8 @@
 import {
-  FactorGrades3mResponse,
   FactorGrades6mResponse,
   FactorGradesNowResponse,
   FormattedResponse,
-  Key,
-  Rating,
+  FactorGradesKey,
 } from "../types";
 
 export interface FactorGradesRowData {
@@ -23,16 +21,16 @@ enum ColumnNames {
 export const formatNowResponse = (
   data: FactorGradesNowResponse
 ): FormattedResponse => {
-  const formatted = {} as FactorGrades3mResponse;
+  const formatted = {} as FormattedResponse;
   for (const key in data) {
-    formatted[key as Key] = data[key as Key].current;
+    formatted[key as FactorGradesKey] = data[key as FactorGradesKey].current;
   }
   return formatted;
 };
 
 export const format6mResponse = (
   { data }: FactorGrades6mResponse,
-  keys: Key[]
+  keys: FactorGradesKey[]
 ): FormattedResponse => {
   const factorGrades6mResponseMap = Object.fromEntries(data);
   return keys.reduce((acc, key) => {
@@ -41,9 +39,9 @@ export const format6mResponse = (
 };
 
 export const mapKeysToRowsData = (
-  keys: Key[],
+  keys: FactorGradesKey[],
   formattedData: {
-    [k in ColumnNames]: Record<Key, Rating>;
+    [k in ColumnNames]: FormattedResponse;
   }
 ): FactorGradesRowData[] =>
   keys.map((k) => ({

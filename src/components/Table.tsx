@@ -1,35 +1,35 @@
 import "./Table.scss";
 
 export interface Column<T> {
-  header: string;
+  header?: string;
   render: (row: T) => React.ReactNode;
   id: string;
 }
 
-interface TableProps<T extends { rowName?: string }> {
+interface TableProps<T> {
   columns: Column<T>[];
   data: T[];
   title?: string;
 }
 
-const Table = <T extends { rowName?: string }>({
-  columns,
-  data,
-  title,
-}: TableProps<T>) => {
+const Table = <T,>({ columns, data, title }: TableProps<T>) => {
+  const showHeader = columns.some((col) => col.header);
+
   return (
     <div className="table">
       {title && <h4 className="title">{title}</h4>}
       <table>
-        <thead>
-          <tr>
-            {columns.map(({ header }) => (
-              <th key={header} className="header">
-                {header}
-              </th>
-            ))}
-          </tr>
-        </thead>
+        {showHeader && (
+          <thead>
+            <tr>
+              {columns.map(({ header, id }) => (
+                <th key={id} className="header">
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        )}
         <tbody>
           {data.map((rowData, i) => (
             <tr key={i}>
