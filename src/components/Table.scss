@@ -1,0 +1,22 @@
+.table {
+  td,
+  th {
+    font-weight: normal;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 12px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    color: grey;
+    margin: 1rem;
+  }
+
+  .header {
+    font-size: 0.8rem;
+    color: grey;
+  }
+}

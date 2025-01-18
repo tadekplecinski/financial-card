@@ -1,0 +1,10 @@
+.cellContent {
+  display: flex;
+  justify-content: center;
+
+  &.info {
+    color: #5c9ae6;
+    justify-content: flex-start;
+    padding-right: 2rem;
+  }
+}
