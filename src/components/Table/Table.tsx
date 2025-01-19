@@ -6,12 +6,12 @@ export interface Column<T> {
   id: string;
 }
 
-interface TableProps<T> {
+export interface TableProps<T> {
   columns: Column<T>[];
   data: T[];
 }
 
-const Table = <T,>({ columns, data }: TableProps<T>) => {
+export const Table = <T,>({ columns, data }: TableProps<T>) => {
   const showHeader = columns.some((col) => col.header);
 
   return (
@@ -39,5 +39,3 @@ const Table = <T,>({ columns, data }: TableProps<T>) => {
     </table>
   );
 };
-
-export default Table;

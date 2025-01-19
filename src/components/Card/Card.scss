@@ -1,10 +1,12 @@
+@use "@/variables" as shared;
+
 .card {
-  background-color: #fff;
+  background-color: shared.$bg-color-main;
   padding: 1rem;
 
   &__title {
-    font-size: 1.6rem;
-    color: grey;
+    font-size: shared.$font-size-large;
+    color: shared.$text-color-secondary;
     margin: 0;
     margin-bottom: 1rem;
   }

@@ -2,7 +2,6 @@ import classNames from "classnames";
 
 import "./CellContent.scss";
 
-// todo: add @ paths!!!!!
 // more BEM?
 // RWD (??)
 // unit tests

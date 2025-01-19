@@ -1,4 +1,4 @@
-import Loader from "../Loader/Loader";
+import { Loader } from "..";
 import "./Card.scss";
 
 type CardProps = {

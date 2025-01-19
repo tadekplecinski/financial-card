@@ -1,14 +1,12 @@
-import { FactorGradesKey } from "../../types";
-import Table, { Column } from "../../components/Table/Table";
-import CellContent from "../../components/CellContent/CellContent";
-import { useFactorGradesData } from "../../hooks/useFactorGradesData";
+import { FactorGradesKey } from "../../../types";
 import {
   FactorGradesRowData,
   format6mResponse,
   formatNowResponse,
   mapKeysToRowsData,
 } from "./utils";
-import Card from "../../components/Card/Card";
+import { useFactorGradesData } from "@/hooks";
+import { Card, CellContent, Column, Table } from "@/components";
 
 const FactorGrades: React.FC = () => {
   const { nowData, threeMonthsData, sixMonthsData, isPending, isError } =

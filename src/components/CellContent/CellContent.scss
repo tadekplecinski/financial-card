@@ -1,8 +1,10 @@
+@use "@/variables" as shared;
+
 .cellContent {
   text-align: center;
 
   &.info {
-    color: #5c9ae6;
+    color: shared.$text-color-info;
     text-align: left;
   }
 }

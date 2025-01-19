@@ -1,14 +1,15 @@
 import { lazy, Suspense } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchData } from "../hooks/common";
+import { Loader } from "@/components";
+import { fetchData } from "@/hooks";
+
 import { UserResponse } from "../types";
-import Loader from "../components/Loader/Loader";
-import SectorIndustryRanking from "./SectorIndustryRanking";
+import SectorIndustryRanking from "./Cards/SectorIndustryRanking";
 import "./RatingsGroup.scss";
 
-const RatingsSummary = lazy(() => import("./RatingsSummary"));
-const FactorGrades = lazy(() => import("./FactorGrades/FactorGrades"));
+const RatingsSummary = lazy(() => import("./Cards/RatingsSummary"));
+const FactorGrades = lazy(() => import("./Cards/FactorGrades/FactorGrades"));
 
 const RatingsGroup: React.FC = () => {
   const { data, isPending, isError } = useQuery<UserResponse>({
@@ -17,7 +18,13 @@ const RatingsGroup: React.FC = () => {
       fetchData<UserResponse>("https://seekingalpha.free.beeceptor.com/user"),
   });
 
-  if (isPending) return <Loader />;
+  if (isPending) {
+    return (
+      <div className="ratingsGroup">
+        <Loader />
+      </div>
+    );
+  }
 
   if (isError) {
     return <div>An error occurred... Try again later</div>;
@@ -26,7 +33,7 @@ const RatingsGroup: React.FC = () => {
   const isPremium = data.premium;
 
   return (
-    <div className="ratings-group">
+    <div className="ratingsGroup">
       {isPremium && (
         <Suspense fallback={<Loader />}>
           <RatingsSummary />

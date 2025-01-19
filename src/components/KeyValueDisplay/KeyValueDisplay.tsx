@@ -5,7 +5,9 @@ export type KeyValueDisplayProps = {
   keyValues: Record<string, React.ReactNode>;
 };
 
-const KeyValueDisplay: React.FC<KeyValueDisplayProps> = ({ keyValues }) => {
+export const KeyValueDisplay: React.FC<KeyValueDisplayProps> = ({
+  keyValues,
+}) => {
   return (
     <>
       {Object.entries(keyValues).map(([key, value]) => (
@@ -19,5 +21,3 @@ const KeyValueDisplay: React.FC<KeyValueDisplayProps> = ({ keyValues }) => {
     </>
   );
 };
-
-export default KeyValueDisplay;

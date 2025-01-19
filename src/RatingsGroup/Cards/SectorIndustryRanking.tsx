@@ -1,11 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { SectorIndustryRankingResponse } from "../types";
-import { fetchData } from "../hooks/common";
-import KeyValueDisplay, {
-  KeyValueDisplayProps,
-} from "../components/KeyValueDisplay/KeyValueDisplay";
-import Card from "../components/Card/Card";
+import { SectorIndustryRankingResponse } from "@/types";
+import { fetchData } from "@/hooks/common";
+import { Card, KeyValueDisplay, KeyValueDisplayProps } from "@/components";
 
 const formatSectorIndustryRankingResponse = (
   data: SectorIndustryRankingResponse

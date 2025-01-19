@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import FinancialAnalysis from "../RatingsGroup/FactorGrades/FactorGrades";
+import FinancialAnalysis from "../RatingsGroup/Cards/FactorGrades/FactorGrades";
 
 it("renders financial analysis component", () => {
   render(<FinancialAnalysis />);

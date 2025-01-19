@@ -1,20 +1,17 @@
+@use "@/variables" as shared;
+
 .table {
   border-collapse: collapse;
   width: 100%;
 
-  // tr {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
-
   td,
   th {
     font-weight: normal;
-    padding: 0.3rem;
+    padding: shared.$padding-small;
   }
 
   .header {
-    font-size: 0.8rem;
+    font-size: shared.$font-size-small;
     color: grey;
   }
 }

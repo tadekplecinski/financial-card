@@ -1,7 +1,9 @@
+@use "@/variables" as shared;
+
 .loader {
   display: inline-block;
   border: 4px solid;
-  border-color: #3498db transparent transparent transparent;
+  border-color: shared.$text-color-info transparent transparent transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   width: 3rem;

@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import "./index.scss";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RatingsGroup from "./RatingsGroup/RatingsGroup.tsx";
+import RatingsGroup from "./RatingsGroup/RatingsGroup";
 
 const queryClient = new QueryClient();
 
