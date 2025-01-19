@@ -9,7 +9,9 @@ import { UserResponse } from "../types";
 import SectorIndustryRanking from "./Cards/SectorIndustryRanking/SectorIndustryRanking";
 import "./RatingsGroup.scss";
 
-const RatingsSummary = lazy(() => import("./Cards/RatingsSummary"));
+const RatingsSummary = lazy(
+  () => import("./Cards/RatingsSummary/RatingsSummary")
+);
 const FactorGrades = lazy(() => import("./Cards/FactorGrades/FactorGrades"));
 
 const RatingsGroup: React.FC = () => {

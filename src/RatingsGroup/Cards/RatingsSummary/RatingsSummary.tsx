@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CellContent, Column, Table } from "@/components";
 import { fetchData } from "@/hooks";
 
-import { RatingsSummaryResponse } from "../../types";
+import { RatingsSummaryResponse } from "../../../types";
 
 export interface RatingsSummaryRowData {
   entity: string;

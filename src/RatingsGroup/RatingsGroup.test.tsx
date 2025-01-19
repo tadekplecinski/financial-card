@@ -6,14 +6,14 @@ import RatingsGroup from "./RatingsGroup";
 jest.mock("./Cards/SectorIndustryRanking/SectorIndustryRanking", () => () => (
   <div>SectorIndustryRanking Component</div>
 ));
-jest.mock("./Cards/RatingsSummary", () => () => (
+jest.mock("./Cards/RatingsSummary/RatingsSummary", () => () => (
   <div>RatingsSummary Component</div>
 ));
 jest.mock("./Cards/FactorGrades/FactorGrades", () => () => (
   <div>FactorGrades Component</div>
 ));
 jest.mock("@/components/Error", () => ({
-  ErrorMessage: () => <div>ErrorMessage Component</div>,
+  ErrorMessage: () => <div>Error...</div>,
 }));
 jest.mock("@/components", () => ({
   Loader: () => <div>Loading...</div>,
@@ -58,8 +58,7 @@ describe("RatingsGroup", () => {
 
     render(<RatingsGroup />, { wrapper });
 
-    await waitFor(() => screen.getByText("ErrorMessage Component"));
-    expect(screen.getByText("ErrorMessage Component")).toBeInTheDocument();
+    await waitFor(() => screen.getByText("Error..."));
   });
 
   it("should display premium content when the user is premium", async () => {
