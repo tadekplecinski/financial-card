@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Loader } from "@/components";
 import { fetchData } from "@/hooks";
+import { ErrorMessage } from "@/components/Error";
 
 import { UserResponse } from "../types";
 import SectorIndustryRanking from "./Cards/SectorIndustryRanking";
@@ -27,7 +28,7 @@ const RatingsGroup: React.FC = () => {
   }
 
   if (isError) {
-    return <div>An error occurred... Try again later</div>;
+    return <ErrorMessage />;
   }
 
   const isPremium = data.premium;

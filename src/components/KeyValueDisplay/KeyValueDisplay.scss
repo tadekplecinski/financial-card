@@ -3,6 +3,6 @@
 .keyValue {
   display: flex;
   justify-content: space-between;
-  padding: shared.$padding-small;
+  padding: shared.$padding-small 0;
   gap: 2rem;
 }

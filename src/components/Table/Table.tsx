@@ -20,7 +20,7 @@ export const Table = <T,>({ columns, data }: TableProps<T>) => {
         <thead>
           <tr>
             {columns.map(({ header, id }) => (
-              <th key={id} className="header">
+              <th key={id} className="table__header">
                 {header}
               </th>
             ))}

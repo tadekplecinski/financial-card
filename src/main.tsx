@@ -11,7 +11,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <div className="page">
-        <div></div>
+        <div className="mainContent"></div>
         <RatingsGroup />
       </div>
     </QueryClientProvider>

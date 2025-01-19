@@ -1,4 +1,5 @@
 import { Loader } from "..";
+import { ErrorMessage } from "../Error";
 import "./Card.scss";
 
 type CardProps = {
@@ -14,7 +15,7 @@ const Card: React.FC<CardProps> = ({ children, isLoading, isError, title }) => {
   if (isLoading) {
     content = <Loader />;
   } else if (isError) {
-    content = <div className="card">Error :(</div>;
+    content = <ErrorMessage />;
   } else {
     content = children;
   }

@@ -4,6 +4,8 @@ import { SectorIndustryRankingResponse } from "@/types";
 import { fetchData } from "@/hooks/common";
 import { Card, KeyValueDisplay, KeyValueDisplayProps } from "@/components";
 
+import "./SectorIndustryRanking.scss";
+
 const formatSectorIndustryRankingResponse = (
   data: SectorIndustryRankingResponse
 ): KeyValueDisplayProps["keyValues"] => {
@@ -57,6 +59,13 @@ const SectorIndustryRanking: React.FC = () => {
   return (
     <Card title={title}>
       <KeyValueDisplay keyValues={formattedData} />
+      <a
+        target="_blank"
+        href="https://quantnet.com/mfe-programs-rankings/"
+        className="link"
+      >
+        Quant Rankings Beat The Market
+      </a>
     </Card>
   );
 };

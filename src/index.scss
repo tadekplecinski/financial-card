@@ -30,10 +30,28 @@
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: shared.$text-color-info;
+
+  &:hover {
+    color: shared.$text-color-info;
+  }
+}
+
 /* some silly styles to be able to see the component in the right rail
   (in its natural environment) */
 
 .page {
   display: grid;
-  grid-template-columns: 4fr minmax(400px, 1fr);
+  grid-template-columns: 1fr; // Default to a single-column layout (stacked)
+
+  .mainContent {
+    min-height: 100vh;
+  }
+
+  @media (min-width: 768px) {
+    // Apply horizontal layout for larger screens
+    grid-template-columns: 4fr minmax(400px, 1fr);
+  }
 }
