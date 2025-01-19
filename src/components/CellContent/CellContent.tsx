@@ -6,7 +6,7 @@ import "./CellContent.scss";
 // unit tests
 // readme
 
-type CellContentProps = {
+export type CellContentProps = {
   children?: React.ReactNode;
   type?: "info";
   className?: string;

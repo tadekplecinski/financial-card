@@ -2,7 +2,7 @@ import { Loader } from "..";
 import { ErrorMessage } from "../Error";
 import "./Card.scss";
 
-type CardProps = {
+export type CardProps = {
   title?: string;
   children?: React.ReactNode;
   isLoading?: boolean;

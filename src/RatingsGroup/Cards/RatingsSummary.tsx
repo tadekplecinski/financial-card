@@ -5,13 +5,13 @@ import { fetchData } from "@/hooks";
 
 import { RatingsSummaryResponse } from "../../types";
 
-interface RatingsSummaryRowData {
+export interface RatingsSummaryRowData {
   entity: string;
   rating: string;
   score: number;
 }
 
-const formatRatingsSummaryResponse = (
+export const formatRatingsSummaryResponse = (
   data: RatingsSummaryResponse
 ): RatingsSummaryRowData[] => {
   return Object.entries(data).map(([key, { rating, score }]) => {
