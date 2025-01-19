@@ -6,7 +6,7 @@ import { fetchData } from "@/hooks";
 import { ErrorMessage } from "@/components/Error";
 
 import { UserResponse } from "../types";
-import SectorIndustryRanking from "./Cards/SectorIndustryRanking";
+import SectorIndustryRanking from "./Cards/SectorIndustryRanking/SectorIndustryRanking";
 import "./RatingsGroup.scss";
 
 const RatingsSummary = lazy(() => import("./Cards/RatingsSummary"));

@@ -12,6 +12,8 @@ export interface TableProps<T> {
 }
 
 export const Table = <T,>({ columns, data }: TableProps<T>) => {
+  if (!columns || columns.length === 0 || !data) return null;
+
   const showHeader = columns.some((col) => col.header);
 
   return (
